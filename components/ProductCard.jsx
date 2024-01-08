@@ -27,6 +27,7 @@ const ProductCard = ({ product, addToCart }) => {
         <span className="p-2 font-bold">Price: $ {products?.price}</span>
         <button
           onClick={() => addToCart(product)}
+          
           className="bg-slate-950 hover:bg-green-500 hover:text-black 
             text-white py-[5px] px-[10px]"
         >
