@@ -6,8 +6,6 @@ import Navbar from "./Navbar";
 import toast, { Toaster } from "react-hot-toast";
 
 const Products = () => {
-
-  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -15,8 +13,6 @@ const Products = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);
-
-
 
   // cart
 
@@ -29,18 +25,6 @@ const Products = () => {
     // console.log(cartItems);
   };
 
-
-
-// + - product 
-  const handleChange = (item, d) => {
-    const ind = cartItems.indexOf(item);
-    const arr = cartItems;
-    arr[ind].amount += d;
-
-    if (arr[ind].amount === 0) arr[ind].amount = 1;
-    setCartItems([...arr]);
-  };
-
   // rmv cart
   const removeFromCart = (productId) => {
     const updatedCart = cartItems.filter((item) => item.id !== productId);
@@ -48,21 +32,15 @@ const Products = () => {
     toast.success("Product Remove");
   };
 
-
-// cart show 
+  // cart show
   const [show, setShow] = useState(true);
   console.log(show);
 
-
   return (
     <div>
-      <Navbar
-        cartItems={cartItems}
-        setShow={setShow}
-        handleChange={handleChange}
-      />
+      <Navbar cartItems={cartItems} setShow={setShow} />
       {show ? (
-        <div className="ml-[90px] grid  grid-cols-3 items-center gap-5">
+        <div className="ml-[90px] grid  sm:grid-cols-1 md:grid-cols-3  items-center gap-5">
           {products?.map((product) => (
             <ProductCard
               product={product}
