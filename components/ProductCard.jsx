@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,7 @@ const ProductCard = ({ product, addToCart }) => {
   return (
     <div className=" border shadow-xl hover:shadow-4xl bg-white rounded-md h-[440px] w-[250px] my-5 mx-2 ">
       {/* product_card */}
-      <Link href={"/product"}>
+      <Link href={`/product/${products.id}`}>
         <div className="p-5">
           <img
             className="h-[250px] w-[320px] rounded-sm"

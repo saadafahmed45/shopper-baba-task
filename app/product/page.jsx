@@ -13,7 +13,9 @@ const Products = () => {
   useEffect(() => {
     fetch(`https://dummyjson.com/products/`)
       .then((res) => res.json())
-      .then((data) => setProducts(data.products));
+      .then((data) => {
+        setProducts(data.products);
+      });
   }, []);
 
   // add cart

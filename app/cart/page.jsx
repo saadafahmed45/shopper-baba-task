@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const Cart = () => {
+const Cart = () => {
   return (
     <div>
       <h2 className="text-center text-gray-900 text-2xl my-5">
@@ -36,5 +36,6 @@ export const Cart = () => {
       </div>
     </div>
   );
-}
+};
 
+export default Cart;

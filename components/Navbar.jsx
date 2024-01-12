@@ -21,7 +21,7 @@ const Navbar = () => {
             <Link href="/product">Product</Link>
           </li>
           <li>
-            <Link href="/cart">Cart</Link>
+            <Link href={"/cart"}>Cart</Link>
           </li>
           <li>
             <Link href="/">contact</Link>
