@@ -1,10 +1,14 @@
 import React from "react";
+import { useCart } from "../CartContext";
 
 const Cart = () => {
+
+  // const { addToCart, cart } = useCart();
+
+
   return (
     <div>
       <h2 className="text-center text-gray-900 text-2xl my-5">
-        hi
         {/* Shopping Cart {cartItems.length} */}
       </h2>
       <div className="flex justify-evenly font-bold">

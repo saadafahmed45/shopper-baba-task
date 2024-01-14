@@ -1,15 +1,29 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Context, useCart } from "@/app/CartContext";
 
-const ProductCard = ({ product, addToCart }) => {
+const ProductCard = ({ product }) => {
   const products = product;
-
   // console.log(product);
+
+  // add to cart
+  const { addToCart, cart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(products);
+    // alert("add cart done..");
+    console.log('add cart is work');
+  };
+  console.log(cart.length);
+  console.log(cart);
+  // console.log(cart.title);
+
   return (
     <div className=" border shadow-xl hover:shadow-4xl bg-white rounded-md h-[440px] w-[250px] my-5 mx-2 ">
       {/* product_card */}
+
       <Link href={`/product/${products.id}`}>
         <div className="p-5">
           <img
@@ -18,18 +32,19 @@ const ProductCard = ({ product, addToCart }) => {
             alt="thumbnai"
           />
         </div>
-        <div className="flex flex-col items- p-5">
-          <h4 className="text-xl text-right">{products?.title}</h4>
-          <span className="p-2 font-bold">Price: $ {products?.price}</span>
-          <button
-            onClick={() => addToCart(product)}
-            className="bg-slate-950 hover:bg-green-500 hover:text-black 
-            text-white py-[5px] px-[10px]"
-          >
-            Add cart
-          </button>
-        </div>
       </Link>
+      <div className="flex flex-col items- p-5">
+        <h4 className="text-xl text-right">{products?.title}</h4>
+        <span className="p-2 font-bold">Price: $ {products?.price}</span>
+        <button
+          // onClick={() => HandleAddToCart(product?.tile)}
+          onClick={handleAddToCart}
+          className="bg-slate-950 hover:bg-green-500 hover:text-black 
+            text-white py-[5px] px-[10px]"
+        >
+          Add cart
+        </button>
+      </div>
     </div>
   );
 };

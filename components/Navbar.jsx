@@ -6,6 +6,8 @@ import { IoLogoBuffer } from "react-icons/io";
 import Link from "next/link";
 
 const Navbar = () => {
+
+  
   return (
     <div className="px-20 py-3 bg-green-500">
       <nav className="flex justify-between">
