@@ -2,14 +2,20 @@
 import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
+
+
+
 
 const ProductCard = ({ product }) => {
   const products = product;
   // console.log(product);
 
   // add to cart
-
-
+  const handleAddToCart = () => {
+    toast.success("Product Added");
+    console.log("add cart clicked");
+  };
 
   return (
     <div className=" border shadow-xl hover:shadow-4xl bg-white rounded-md h-[440px] w-[250px] my-5 mx-2 ">

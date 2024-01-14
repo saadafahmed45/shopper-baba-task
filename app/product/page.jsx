@@ -34,7 +34,6 @@ const Products = () => {
         ))}
       </div>
 
-      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
