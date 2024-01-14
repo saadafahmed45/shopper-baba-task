@@ -20,7 +20,6 @@ const SingleProduct = ({ params }) => {
     <div className="p-[50px] m-2">
       <h2 className="text-2xl font-bold"> Product Details:</h2>
 
-
       <div
         className="flex sm:flex-col  lg:flex-row  justify-around items-center gap-5
       border shadow-xl hover:shadow-4xl bg-white rounded-md h-full  my-7 mx-5 p-2 "

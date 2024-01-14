@@ -1,9 +1,7 @@
 import React from "react";
-import { useCart } from "../CartContext";
 
 const Cart = () => {
 
-  // const { addToCart, cart } = useCart();
 
 
   return (

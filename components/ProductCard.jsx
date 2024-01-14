@@ -2,23 +2,14 @@
 import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Context, useCart } from "@/app/CartContext";
 
 const ProductCard = ({ product }) => {
   const products = product;
   // console.log(product);
 
   // add to cart
-  const { addToCart, cart } = useCart();
 
-  const handleAddToCart = () => {
-    addToCart(products);
-    // alert("add cart done..");
-    console.log('add cart is work');
-  };
-  console.log(cart.length);
-  console.log(cart);
-  // console.log(cart.title);
+
 
   return (
     <div className=" border shadow-xl hover:shadow-4xl bg-white rounded-md h-[440px] w-[250px] my-5 mx-2 ">
