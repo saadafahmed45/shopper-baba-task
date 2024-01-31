@@ -9,8 +9,8 @@ const Navbar = () => {
 
   
   return (
-    <div className="px-20 py-3 bg-green-500">
-      <nav className="flex justify-between flex-col md:flex-row items-center">
+    <div className="">
+      <nav className="h-[70px]  bg-green-500 flex justify-around flex-col md:flex-row items-center">
         <Link href={"/"} className="flex items-center text-xl">
           <IoLogoBuffer />
           Shopper Baba
