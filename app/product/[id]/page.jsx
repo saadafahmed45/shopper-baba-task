@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 
 const SingleProduct = ({ params }) => {
@@ -18,36 +17,40 @@ const SingleProduct = ({ params }) => {
   }, []);
 
   return (
-    <div className="p-[50px] m-2">
-      <h2 className="text-2xl font-bold"> Product Details:</h2>
+    <div className="h-[100vh] md:h-[80vh] mx-5  ">
+      <div className="p-4 ">
+        <h2 className="text-xl md:text-2xl font-bold"> Product Details:</h2>
 
-      <div
-        className="flex sm:flex-col  lg:flex-row  justify-around items-center gap-5
-      border shadow-xl hover:shadow-4xl bg-white rounded-md h-full  my-7 mx-5 p-2 "
-      >
-        {/* product_card */}
-        <div className="p-2">
-          <img
-            className="h-[250px] w-[320px] rounded-sm"
-            src={products?.thumbnail}
-            alt="thumbnai"
-          />
-        </div>
-        <div className="flex flex-col gap-2 p-2 ">
-          <h4 className="text-xl">{products?.title}</h4>
-          <span className=" font-bold">$ {products?.price}</span>
-          <span className=" font-semibold">Brand: {products?.brand}</span>{" "}
-          <span className=" font-semibold">rating</span>
-          <h3 className="text-bold">
-            Description: <span>{products?.description} </span>
-          </h3>
-          <div className="flex mt-5">
-            <button
-              className="bg-slate-800 hover:bg-green-500 hover:text-black 
-            text-white py-[5px] px-[8px]"
-            >
-              Add cart
-            </button>
+        <div
+          className="flex flex-col  lg:flex-row  justify-around items-center gap-5
+        border shadow-xl hover:shadow-4xl bg-white rounded-md h-full  my-7  p-4 "
+        >
+          {/* product_card */}
+          <div className="">
+            <img
+              className="h-[270px]  md:h-[300px] rounded-sm"
+              src={products?.thumbnail}
+              alt="thumbnai"
+            />
+          </div>
+          <div className="flex flex-col gap-2 p-4 ">
+            <h4 className="text-2xl">{products?.title}</h4>
+            <span className="text-2xl font-bold">$ {products?.price}</span>
+            <span className="text-xl md:text-md font-semibold">
+              Brand: {products?.brand}
+            </span>{" "}
+            <span className=" font-semibold">rating</span>
+            <h3 className="text-bold text-md md:text-xl">
+              Description: <span>{products?.description} </span>
+            </h3>
+            <div className="flex mt-5">
+              <button
+                className="bg-slate-800 text-md md:text-xl hover:bg-green-500 hover:text-black 
+            text-white py-[5px] px-[8px] duration-300 "
+              >
+                Add cart
+              </button>
+            </div>
           </div>
         </div>
       </div>

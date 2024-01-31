@@ -26,14 +26,14 @@ const Products = () => {
   //   // console.log(cartItems);
   // };
 
-  return (
-    <div>
-      <div className="ml-[90px] grid  sm:grid-cols-1 md:grid-cols-3  items-center gap-5">
+  return ( 
+    <div className="w-full px-[50px]">
+      {/* ml-[90px] grid sm:grid-cols-1 md:grid-cols-3 items-center gap-5 */}
+      <div className=" flex flex-col justify-evenly md:flex-row lg:flex-row flex-wrap gap-4 items-center">
         {products?.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-
     </div>
   );
 };
