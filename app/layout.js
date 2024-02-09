@@ -2,8 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CartProvider } from "./CartContext";
 import toast, { Toaster } from "react-hot-toast";
+import CartProvider from "./CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +20,8 @@ export default function RootLayout({ children }) {
           <Navbar />
           {/* <Cart /> */}
           <Toaster position="top-center" reverseOrder={false} />
-
           {children}
-          <Footer/>
+          <Footer />
         </CartProvider>
       </body>
     </html>

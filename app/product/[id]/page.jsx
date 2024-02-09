@@ -16,6 +16,10 @@ const SingleProduct = ({ params }) => {
       });
   }, []);
 
+
+
+
+  
   return (
     <div className="h-[100vh] md:h-[80vh] mx-5  ">
       <div className="p-4 ">
@@ -45,6 +49,8 @@ const SingleProduct = ({ params }) => {
             </h3>
             <div className="flex mt-5">
               <button
+
+                
                 className="bg-slate-800 text-md md:text-xl hover:bg-green-500 hover:text-black 
             text-white py-[5px] px-[8px] duration-300 "
               >
