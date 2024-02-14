@@ -1,17 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoLogoBuffer } from "react-icons/io";
 import Link from "next/link";
+import { CartContext } from "@/app/CartContext";
 
 const Navbar = () => {
+  const { cartItems } = useContext(CartContext);
+
   const isLogin = false;
 
   return (
     <div className="">
-      <nav className="h-[70px]  bg-green-500 flex justify-around flex-col md:flex-row items-center">
-        <Link href={"/"} className="flex items-center text-2xl">
+      <nav className=" h-[110px] md:h-[70px] bg-green-500 flex justify-around flex-col md:flex-row items-center">
+        <Link href={"/"} className="flex items-center text-xl md:text-2xl ">
           <IoLogoBuffer />
           Shopper Baba
         </Link>
@@ -19,9 +22,9 @@ const Navbar = () => {
           <li>
             <Link href={"/"}>Home</Link>
           </li>
-          <li>
-            <Link href="/product">Product</Link>
-          </li>
+          {/* <li>
+            <Link href={"/product"}>Product</Link>
+          </li> */}
           <li>
             <Link href="/cart">Cart</Link>
           </li>
@@ -32,13 +35,20 @@ const Navbar = () => {
             <Link href="/">contact</Link>
           </li>
         </ul>
-        <div className="flex text-[20px]  gap-4 uppercase">
-          <button
-            className="font-bold cursor-pointer flex
-           flex-row items-center gap-2"
+        <div className="flex text-[16px] md:text-[20px] gap-4 uppercase ">
+          <Link
+            href="/cart"
+            className="relative inline-flex items-center text-2xl text-black  focus:ring-2 focus:outline-none"
           >
-            cart : <FaCartShopping />
-          </button>
+            <FaCartShopping />
+            <span
+              className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-4 -end-4 
+          "
+            >
+              {" "}
+              {cartItems.length}
+            </span>
+          </Link>
           {!isLogin ? (
             <>
               {/* <Link href="/register">Register</Link> */}

@@ -3,12 +3,9 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
-import { CartContext } from "@/app/CartContext";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, handleCartAdded }) => {
   const products = product;
-
-  const { handleAddToCart } = useContext(CartContext);
 
   // add to cart
   // const handleAddToCart = () => {
@@ -38,7 +35,7 @@ const ProductCard = ({ product }) => {
           $ {products?.price}
         </span>
         <button
-          onClick={() => handleAddToCart(products)}
+          onClick={() => handleCartAdded(products)}
           className="bg-slate-950 hover:bg-green-500 hover:text-black 
             text-white py-[5px] px-[10px]"
         >
