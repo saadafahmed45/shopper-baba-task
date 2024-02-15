@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="h-1/2">
+    <div className="h-screen">
       <div className="pt-[50px] px-[100px]  bg-green-500 ">
         <div className=" flex flex-col md:flex-row  justify-evenly  items-start">
           <div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="h-full bg-gray-50">
+    <div className="w-full h-screen  bg-gray-50">
       {/* <Header/> */}
       <Products />
     </div>

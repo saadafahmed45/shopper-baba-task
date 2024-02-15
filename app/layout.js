@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           {/* <Cart /> */}
           <Toaster position="right-bottom" reverseOrder={false} />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </CartProvider>
       </body>
     </html>
