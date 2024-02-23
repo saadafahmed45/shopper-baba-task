@@ -1,7 +1,14 @@
 "use client";
 
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import app from "../firebase/firebase.init";
 
 export const CartContext = createContext(null);
 
@@ -40,9 +47,54 @@ const CartProvider = ({ children }) => {
     setCartItems(JSON.parse(localStorage.getItem("cartItems")) || []);
   }, []);
 
+  // login
+
+  const [user, setUser] = useState([]);
+
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const loggedInuser = result.user;
+        console.log(loggedInuser);
+        setUser(loggedInuser);
+        toast.success("Your are login");
+        localStorage.setItem("user", JSON.stringify(loggedInuser));
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+      });
+  };
+  // sing out
+  const handleSingOut = () => {
+    signOut(auth)
+      .then((result) => {
+        // Sign-out successful.
+        setUser("");
+        toast.error("Your are log out");
+        localStorage.setItem("user", JSON.stringify(""));
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+  // localStorage save
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")) || []);
+  }, []);
+
   return (
     <CartContext.Provider
-      value={{ cartItems, handleCartAdded, removeFromCart }}
+      value={{
+        cartItems,
+        handleCartAdded,
+        removeFromCart,
+        user,
+        handleGoogleSignIn,
+        handleSingOut,
+      }}
     >
       {children}
     </CartContext.Provider>
