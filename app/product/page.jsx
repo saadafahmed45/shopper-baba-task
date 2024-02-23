@@ -35,15 +35,15 @@ const Products = () => {
   console.log(cartItems);
 
   return (
-    <div className="w-full px-[50px] h-full">
+    <div className="w-full px-[50px] bg-white dark:bg-slate-800">
       {/* <h1 className="text-3xl text-center">product cart {cartItems.length} </h1> */}
 
       {/* search bar  */}
-      <div className="text-center my-[50px]">
+      <div className="text-center py-[50px]">
         <input
           type="text"
           placeholder="search you product"
-          className="w-[70%] md:w-[30%] h-[35px] p-2 rounded-xl outline-none text-gray-800 border border-slate-700	 border-solid	"
+          className="w-[70%] md:w-[30%] h-[35px] px-5 py-5 rounded-xl outline-none text-gray-800 border border-slate-700	 border-solid	"
           onChange={(e) => setQuary(e.target.value)}
         />
       </div>
