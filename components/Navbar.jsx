@@ -7,7 +7,7 @@ import Link from "next/link";
 import { CartContext } from "@/app/CartContext";
 
 const Navbar = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, user, handleSingOut } = useContext(CartContext);
 
   const isLogin = false;
 
@@ -49,15 +49,16 @@ const Navbar = () => {
               {cartItems.length}
             </span>
           </Link>
-          {!isLogin ? (
+          {user.emailVerified === true ? (
             <>
-              {/* <Link href="/register">Register</Link> */}
-              <Link href="/login">Login</Link>
+              <button onClick={handleSingOut}>Logout</button>
+              <Link href="/profile">Profile</Link>
             </>
           ) : (
             <>
-              <Link href="/">Logout</Link>
-              <Link href="/profile">Profile</Link>
+              {" "}
+              <Link href="/register">Register</Link>
+              <Link href="/login">Login</Link>
             </>
           )}
         </div>

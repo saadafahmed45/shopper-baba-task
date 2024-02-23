@@ -21,7 +21,7 @@ const CartProvider = ({ children }) => {
     const indexOfCurrentItem = copyCartItems.findIndex(
       (item) => item.id === getCurrentItem.id
     );
-    // console.log(indexOfCurrentItem);
+    console.log(copyCartItems);
     if (indexOfCurrentItem === -1) {
       copyCartItems.push(getCurrentItem);
     }

@@ -1,14 +1,10 @@
 "use client";
 
 import InputField from "@/components/InputField";
-
 import SubButton from "@/components/SubButton";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { getAuth } from "firebase/auth";
-import app from "../firebase/firebase.init";
 import toast, { Toaster } from "react-hot-toast";
 import { CartContext } from "../CartContext";
 
@@ -18,7 +14,7 @@ const LoginPage = () => {
   return (
     <div className="h-screen bg-slate-100  flex items-center justify-center">
       <div className="bg-gray-300 h-1/2  w-full md:h-1/2   md:w-1/2 p-4 flex flex-col items-center justify-evenly">
-        {user.length == 0 ? (
+        {user.length === 0 ? (
           <div>
             {" "}
             <div className=" p-2 ">
@@ -29,7 +25,7 @@ const LoginPage = () => {
             <div>
               <form className="">
                 <InputField
-                  placeholder={user.email}
+                  placeholder="email"
                   type="text"
                   name="email"
                   label="email"
@@ -47,7 +43,7 @@ const LoginPage = () => {
             <div>
               <span>
                 Don't have account?
-                <Link href={"/register"} className="ml-2 text-green-500">
+                <Link href="/register" className="ml-2 text-red-700">
                   Register Here
                 </Link>
               </span>

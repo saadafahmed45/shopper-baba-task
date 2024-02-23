@@ -33,7 +33,7 @@ const Products = () => {
 
   const { cartItems, handleCartAdded } = useContext(CartContext);
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="w-full px-[50px] h-full">
