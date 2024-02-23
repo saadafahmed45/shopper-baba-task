@@ -1,8 +1,6 @@
 "use client";
-import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import toast, { Toaster } from "react-hot-toast";
 
 const ProductCard = ({ product, handleCartAdded }) => {
   const products = product;
@@ -14,7 +12,7 @@ const ProductCard = ({ product, handleCartAdded }) => {
   // };
 
   return (
-    <div className=" border shadow-xl hover:shadow-4xl bg-white   rounded-md h-[440px] w-[250px] my-5 mx-2 ">
+    <div className=" border shadow-xl hover:shadow-4xl dark:text-white dark:bg-black bg-white    rounded-md h-[440px] w-[250px] my-5 mx-2 ">
       {/* product_card */}
 
       <Link href={`/product/${products?.id}`}>
@@ -36,7 +34,7 @@ const ProductCard = ({ product, handleCartAdded }) => {
         </span>
         <button
           onClick={() => handleCartAdded(products)}
-          className="bg-slate-950 hover:bg-green-500 hover:text-black 
+          className="bg-slate-950 dark:bg-green-500 hover:bg-green-500 hover:text-black 
             text-white py-[5px] px-[10px]"
         >
           Add cart
