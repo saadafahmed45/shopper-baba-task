@@ -1,8 +1,7 @@
 "use client";
 // import React, { useEffect, useState } from "react";
-import ProductCard from "../../components/ProductCard";
-import toast, { Toaster } from "react-hot-toast";
 import { useContext, useEffect, useState } from "react";
+import ProductCard from "../../components/ProductCard";
 import { CartContext } from "../CartContext";
 
 const Products = () => {
@@ -44,7 +43,7 @@ const Products = () => {
         <input
           type="text"
           placeholder="search you product"
-          className="w-[70%] md:w-[30%] h-[35px] p-2 rounded-sm text-gray-800 border border-slate-700	 border-solid	"
+          className="w-[70%] md:w-[30%] h-[35px] p-2 rounded-xl outline-none text-gray-800 border border-slate-700	 border-solid	"
           onChange={(e) => setQuary(e.target.value)}
         />
       </div>
