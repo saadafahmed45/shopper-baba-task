@@ -44,7 +44,7 @@ const ProductCard = ({ product, handleCartAdded }) => {
     //   </div>
     // </div>
     <div>
-      <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80">
+      <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 my-8">
         <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
           <img
             src={products?.thumbnail}
