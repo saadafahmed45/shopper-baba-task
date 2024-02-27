@@ -36,7 +36,7 @@ const Products = () => {
   // console.log(cartItems);
 
   return (
-    <div className="w-full px-[50px] h-full">
+    <div className="w-full p-2 h-full">
       {/* <h1 className="text-3xl text-center">product cart {cartItems.length} </h1> */}
 
       {/* search bar  */}

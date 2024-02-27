@@ -58,6 +58,7 @@ const RegisterPage = () => {
               required
             />
             <InputField
+              className="relative"
               placeholder="Enter your password"
               type={showpass ? "text" : "password"}
               name="password"
@@ -65,7 +66,7 @@ const RegisterPage = () => {
               required
             />
             <span
-              className="cursor-pointer"
+              className="cursor-pointer absolute"
               onClick={() => setShowPass(!showpass)}
             >
               {showpass ? <BsEyeSlash /> : <IoEyeSharp />}
