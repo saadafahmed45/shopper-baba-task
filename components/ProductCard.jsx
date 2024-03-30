@@ -5,74 +5,59 @@ import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 
 const ProductCard = ({ product, handleCartAdded }) => {
-  const products = product;
+  const { id, title, thumbnail, price } = product;
+  // const products = product;
 
   // add to cart
   // const handleAddToCart = () => {
   //   toast.success("Product Added");
   //   console.log("add cart clicked");
   // };
+  const des = 100;
+  const desPrice = price + des;
 
   return (
-    // <div classNameName=" border shadow-xl hover:shadow-4xl bg-white   rounded-md h-[440px] w-[250px] my-5 mx-2 ">
-    //   {/* product_card */}
-
-    //   <Link href={`/product/${products?.id}`}>
-    //     <div classNameName=" bg-slate-500 relative h-[280px] w-[250px]">
-    //       <Image
-    //         classNameName=" rounded-sm"
-    //         src={products?.thumbnail}
-    //         alt="thumbnai"
-    //         fill
-    //         // width={80}
-    //         // height={80}
-    //       />
-    //     </div>
-    //   </Link>
-    //   <div classNameName="flex flex-col   p-2 gap-2">
-    //     <h4 classNameName="text-xl ">{products?.title}</h4>
-    //     <span classNameName="p text-xl text-right font-bold">
-    //       $ {products?.price}
-    //     </span>
-    //     <button
-    //       onClick={() => handleCartAdded(products)}
-    //       classNameName="bg-slate-950 hover:bg-green-500 hover:text-black
-    //         text-white py-[5px] px-[10px]"
-    //     >
-    //       Add cart
-    //     </button>
-    //   </div>
-    // </div>
-    <div>
-      <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 my-8">
-        <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
+    <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mt-8">
+      <div className="">
+        <Link className="mt-8" href={`/product/${product.id}`} key={id}>
           <img
-            src={products?.thumbnail}
-            alt="card-image"
-            className="object-contain w-full h-full"
+            src={thumbnail}
+            alt="Product"
+            className="h-80 w-72 object-cover rounded-t-xl"
           />
-        </div>
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-2">
-            <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-              {products?.title}
-            </p>
-            <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-              ${products?.price}
-            </p>
-          </div>
-          <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
-            {products?.description}
+        </Link>
+
+        <div className="px-4 py-3 w-72">
+          <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
+          <p className="text-lg font-bold text-black truncate block capitalize">
+            {title}
           </p>
-        </div>
-        <div className="p-6 pt-0">
-          <button
-            onClick={() => handleCartAdded(products)}
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-            type="button"
-          >
-            Add to Cart
-          </button>
+          <div className="flex items-center">
+            <p className="text-lg font-semibold text-black cursor-auto my-3">
+              ${price}
+            </p>
+            <del>
+              <p className="text-sm text-gray-600 cursor-auto ml-2">
+                {desPrice}
+              </p>
+            </del>
+            <div className="ml-auto">
+              <svg
+                onClick={() => handleCartAdded(product)}
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="bi bi-bag-plus cursor-pointer hover:text-green-600 "
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                />
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>

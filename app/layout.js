@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import toast, { Toaster } from "react-hot-toast";
 import CartProvider from "./CartContext";
+import DsNav from "@/components/DsNav";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <CartProvider>
-          <Navbar />
-          {/* <Cart /> */}
+          {/* <Navbar /> */}
+          <DsNav />
+          {/* <Cart/> */}
           <Toaster position="right-bottom" reverseOrder={false} />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </CartProvider>
       </body>
     </html>

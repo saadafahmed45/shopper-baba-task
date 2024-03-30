@@ -13,6 +13,21 @@ import app from "../firebase/firebase.init";
 export const CartContext = createContext(null);
 
 const CartProvider = ({ children }) => {
+
+
+ //  products data fetching
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products/")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products));
+  }, []);
+
+
+
+
+
   const [cartItems, setCartItems] = useState([]);
 
   // add cart fun
@@ -94,6 +109,7 @@ const CartProvider = ({ children }) => {
         user,
         handleGoogleSignIn,
         handleSingOut,
+        products
       }}
     >
       {children}

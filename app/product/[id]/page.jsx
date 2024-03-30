@@ -26,7 +26,7 @@ const SingleProduct = ({ params }) => {
         <div
           className="flex flex-col  lg:flex-row  justify-around items-center gap-5
         border shadow-xl hover:shadow-4xl bg-white rounded-md h-full  my-7  p-4 "
-        >
+          key={products.id}>
           {/* product_card */}
           <div className="">
             <img
@@ -49,8 +49,7 @@ const SingleProduct = ({ params }) => {
               <button
                 onClick={() => handleCartAdded(products)}
                 className="bg-slate-800 text-md md:text-xl hover:bg-green-500 hover:text-black 
-            text-white py-[5px] px-[8px] duration-300 "
-              >
+            text-white py-[5px] px-[8px] duration-300 ">
                 Add cart
               </button>
             </div>

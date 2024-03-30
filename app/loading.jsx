@@ -4,16 +4,10 @@ import { Bars } from "react-loader-spinner";
 
 const Loading = () => {
   return (
-    <div className="w-screen bg-white shadow-lg rounded-lg overflow-hidden">
-      <Bars
-        height="80"
-        width="80"
-        color="#4fa94d"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+    <div className="w-screen mx-24 flex place-items-center items-center">
+      <div className="text-center flex">
+        <h2>loading</h2>
+      </div>
     </div>
   );
 };
